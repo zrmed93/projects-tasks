@@ -40,3 +40,163 @@ a {
     color-scheme: dark;
   }
 }
+
+.sidebar-link:hover {
+  background-color: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar-link:hover {
+    background-color: #2a2a2a;
+  }
+}
+
+/* Form Styles */
+.form-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.form-container input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-container input:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-container button:hover:not(:disabled) {
+  background-color: #0051cc;
+}
+
+.form-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Project List Styles */
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.project-card {
+  padding: 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  transition: all 0.2s;
+  background-color: white;
+}
+
+.project-card:hover {
+  border-color: #0070f3;
+  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.1);
+  transform: translateY(-1px);
+}
+
+.project-card a {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: inherit;
+}
+
+/* Task List Styles */
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  border-color: #0070f3;
+  box-shadow: 0 1px 4px rgba(0, 112, 243, 0.1);
+}
+
+.task-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.task-item button:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.task-item button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.task-title {
+  flex: 1;
+  font-size: 15px;
+}
+
+.task-title.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .form-container input {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: var(--foreground);
+  }
+
+  .form-container input:focus {
+    border-color: #0070f3;
+  }
+
+  .project-card {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  .task-item {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+}
