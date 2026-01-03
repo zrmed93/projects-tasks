@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+## Supabase setup/migrations
+npm install -g supabase
+supabase login
+supabase link --project-ref <project-ref>
+supabase db push --include-seed
+
+## Test
+npx playwright test e2e
+npx vitest integration
+
+## Google OAuth configuration
+Google Cloud Console:Create an OAuth Client ID
+Supabase Dashboard: Enable Google Provider and Paste Client ID & Secret
+
 ## Getting Started
 
 First, run the development server:
