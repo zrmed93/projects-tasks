@@ -3,16 +3,16 @@ import "./activity.css"
 
 
 export default async function ActivityPage() {
-    const supabase = await supabaseServer()
-    const { data } = await supabase.auth.getUser()
-    if(!data.user) return
+  const supabase = await supabaseServer()
+  const { data } = await supabase.auth.getUser()
+  if (!data.user) return
 
-    const { data:org } = await supabase
-  .from("memberships")
-  .select("org_id")
-  .eq("user_id",data.user.id)
-  .limit(1)
-  .single()
+  const { data: org } = await supabase
+    .from("memberships")
+    .select("org_id")
+    .eq("user_id", data.user.id)
+    .limit(1)
+    .single()
 
 
   const { data: logs, error } = await supabase
@@ -24,7 +24,7 @@ export default async function ActivityPage() {
         created_at,
         entity_type,
         entity_id,
-actor:users(email)
+        actor
       `
     )
     .eq("org_id", org!.org_id)
