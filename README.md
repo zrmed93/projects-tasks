@@ -2,10 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 
 ## Supabase setup/migrations
+```bash
 npm install -g supabase
 supabase login
 supabase link --project-ref <project-ref>
 supabase db push --include-seed
+```
+
 
 ## Test
 npx playwright test e2e
