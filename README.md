@@ -9,10 +9,12 @@ supabase db push --include-seed
 
 ## Test
 npx playwright test e2e
+
 npx vitest integration
 
 ## Google OAuth configuration
 Google Cloud Console:Create an OAuth Client ID
+
 Supabase Dashboard: Enable Google Provider and Paste Client ID & Secret
 
 ## Getting Started
